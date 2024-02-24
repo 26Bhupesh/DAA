@@ -7,17 +7,29 @@ void merge(int a[], int temp[], int l1, int u1, int l2, int u2);
 
 int main()
 {
-  int a[] = {5,2,6,3,8,4,7,10,13,1};
-  int low=0, up=9;
+  
+  int n;
+  cout<<"Enter size of an array: ";
+  cin>>n;
+  
+  int a[n], low=0, up=n-1;
+  
+  cout<<"Enter elements in array:\n";
+  for(int i=0; i<n; i++)
+    cin>>a[i];
+  
   divide(a,low,up);
+  
   cout<<"Array a:\n";
   for(int i=0; i<=up; i++)
     cout<<a[i]<<"\n";
+  
   return 0;
 }
 
 void divide(int arr[], int l, int u)
 {
+  
   int mid, temp[10];
   
   if(l<u)
@@ -32,6 +44,7 @@ void divide(int arr[], int l, int u)
 
 void merge(int arr[], int temp[], int l1, int u1, int l2, int u2)
 {
+  
   int i=l1;
   int j=l2;
   int k=l1; 
